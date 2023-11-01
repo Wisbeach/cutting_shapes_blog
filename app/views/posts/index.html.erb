@@ -1,0 +1,11 @@
+<!-- app/views/posts/index.html.erb -->
+<h1>Posts</h1>
+<%= link_to 'New Post', new_post_path %>
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= link_to post.title, post %>
+      <!-- link to individual post's show page -->
+    </li>
+  <% end %>
+</ul>
