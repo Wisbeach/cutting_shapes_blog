@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
         sessions: 'users/sessions'
-      }
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  }
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # Static route for the About page
+  get 'about', to: 'pages#about'
+
+  get 'shop', to: 'pages#shop'
+
+  # Root route
   root 'posts#index'
+
+  # Resource routes for posts
   resources :posts
 
+  # Other routes...
 end

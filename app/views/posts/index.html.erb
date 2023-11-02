@@ -2,10 +2,14 @@
   <div class="logo"></div>
   <nav>
     <ul>
-      <li><a href="#">LOGIN</a></li>
-      <li><a href="#">ABOUT</a></li>
-      <li><a href="#">SHOP</a></li>
-      <li><a href="#">CONTACT</a></li>
+      <% if user_signed_in? %>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to 'Login', new_user_session_path %></li>
+      <% end %>
+      <li><a href="<%= about_path %>">About</a></li>
+      <li><%= link_to 'Shop', shop_path %></li>
+      <li><a href="#">Contact</a></li>
     </ul>
   </nav>
   <button class="btn-subscribe">SUBSCRIBE</button>
@@ -17,7 +21,7 @@
 
 <div class="hero-section">
   <h1>Cutting Shapes with a Banjo Smuggler</h1>
-  <input type="text" placeholder="Search...">
+  <%# <input type="text" placeholder="Search..."> %>
   <div class="locations">
     <button>SECTION 1</button>
     <button>SECTION 2</button>
