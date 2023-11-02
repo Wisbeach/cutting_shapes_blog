@@ -1,11 +1,51 @@
-<!-- app/views/posts/index.html.erb -->
-<h1>Posts</h1>
-<%= link_to 'New Post', new_post_path %>
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= link_to post.title, post %>
-      <!-- link to individual post's show page -->
-    </li>
-  <% end %>
-</ul>
+<header>
+  <div class="logo"></div>
+  <nav>
+    <ul>
+      <li><a href="#">LOGIN</a></li>
+      <li><a href="#">ABOUT</a></li>
+      <li><a href="#">SHOP</a></li>
+      <li><a href="#">CONTACT</a></li>
+    </ul>
+  </nav>
+  <button class="btn-subscribe">SUBSCRIBE</button>
+  <div class="search">
+    <input type="search" placeholder="Search...">
+    <button><i class="fa fa-search"></i></button>
+  </div>
+</header>
+
+<div class="hero-section">
+  <h1>Cutting Shapes with a Banjo Smuggler</h1>
+  <input type="text" placeholder="Search...">
+  <div class="locations">
+    <button>SECTION 1</button>
+    <button>SECTION 2</button>
+    <button>SECTION 3</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <!-- First Article content here -->
+    </div>
+
+    <div class="col-md-6">
+      <!-- Second Article content here -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <!-- Third Article content here -->
+    </div>
+
+    <div class="col-md-6">
+      <!-- Fourth Article content here -->
+    </div>
+  </div>
+</div>
+
+<footer>
+  <!-- Add footer content here, if any -->
+</footer>

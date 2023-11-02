@@ -1,15 +1,153 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import 'bootstrap/scss/bootstrap';
+
+@font-face {
+  font-family: "CaveatBrush";
+  src: url("CaveatBrush-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'harley';
+  src: url('harley.ttf') format('truetype');
+}
+
+
+
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  /* font-family: 'Caveat Brush', cursive; */
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #063142;
+  color: #fff;
+  height: 80px;
+}
+
+.logo {
+  margin: 0;
+  padding: 0;
+  background-image: url('banjosmuggler.png');
+  background-size: contain; /* Or cover, depending on the desired effect */
+  background-repeat: no-repeat;
+  height: 100px; /* Adjust as necessary */
+  width: 100px; /* Adjust as necessary */
+
+  /* text-indent: -9999px; This hides the text */
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #f5a623;
+}
+
+.btn-subscribe {
+  background-color: #FC408A;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-subscribe:hover {
+  background-color: #f5d59f;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+
+}
+
+.search input[type="search"] {
+  padding: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 20px;
+}
+
+.search button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+
+}
+
+/* Hero Section */
+.hero-section {
+  background-image: url('sunnset.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: black;
+
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 70px;
+  margin-bottom: 20px;
+  font-family: 'harley', cursive;
+}
+
+.hero-section input[type="text"] {
+  padding: 15px;
+  width: 400px;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.hero-section .locations {
+  display: flex;
+  gap: 10px;
+}
+
+.hero-section .locations button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #f523c1;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 20px;
+}
+
+.hero-section .locations button:hover {
+  background-color: #f5d59f;
+}
+
+/* You can continue to expand on this base for other elements and refinements */
