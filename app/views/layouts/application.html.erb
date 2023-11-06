@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
- <%# <%= link_to image_tag('banjo2.png', alt: 'Company Logo', class: 'logo'), root_path %>
-    <!-- ... other header elements ... -->
+  <!-- It seems you have commented out the logo link, uncomment if needed -->
+  <%# <%= link_to image_tag('banjo2.png', alt: 'Company Logo', class: 'logo'), root_path %> 
   <title>CuttingShapesBlog</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
@@ -10,24 +10,14 @@
 
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Caveat:wght@700&display=swap" rel="stylesheet">
-
-
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Caveat:wght@700&display=swap" rel="stylesheet">
 
   <%= javascript_importmap_tags %>
 </head>
 <body>
-  <nav>
-    <% if user_signed_in? %>
-      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-      <%= link_to('Edit profile', edit_user_registration_path) %>
-    <% else %>
-      <%= link_to('Login', new_user_session_path) %>
-      <%= link_to('Sign up', new_user_registration_path) %>
-    <% end %>
-  </nav>
+
+  <%= render 'layouts/navbar' %> <!-- Include the navbar partial -->
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>

@@ -37,17 +37,24 @@ header {
   height: 80px;
 }
 
+.logo-link {
+  text-decoration: none; /* This removes the underline from the link */
+  display: inline-block; /* Or block, depending on layout */
+  /* Other styling as needed */
+}
+
 .logo {
   margin: 0;
   padding: 0;
-  background-image: url('banjosmuggler.png');
+  background-image: url('pinkbrain3.png');
   background-size: contain; /* Or cover, depending on the desired effect */
   background-repeat: no-repeat;
   height: 100px; /* Adjust as necessary */
   width: 100px; /* Adjust as necessary */
-
-  /* text-indent: -9999px; This hides the text */
+  border-radius: 50%;
+  /* Remove the text-indent property if it's not needed */
 }
+
 
 nav ul {
   display: flex;
@@ -65,7 +72,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #f5a623;
+  color: #FC408A;
 }
 
 .btn-subscribe {
@@ -73,6 +80,7 @@ nav a:hover {
   color: white;
   padding: 10px 20px;
   border: none;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s;
 }

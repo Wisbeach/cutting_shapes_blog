@@ -1,23 +1,4 @@
-<header>
-  <div class="logo"></div>
-  <nav>
-    <ul>
-      <% if user_signed_in? %>
-        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to 'Login', new_user_session_path %></li>
-      <% end %>
-      <li><a href="<%= about_path %>">About</a></li>
-      <li><%= link_to 'Shop', shop_path %></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-  <button class="btn-subscribe">SUBSCRIBE</button>
-  <div class="search">
-    <input type="search" placeholder="Search...">
-    <button><i class="fa fa-search"></i></button>
-  </div>
-</header>
+
 
 <div class="hero-section">
   <h1>Cutting Shapes with a Banjo Smuggler</h1>

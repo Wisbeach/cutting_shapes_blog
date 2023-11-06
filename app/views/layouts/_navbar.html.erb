@@ -1,0 +1,22 @@
+
+<header>
+<%= link_to root_path, class: "logo-link" do %>
+  <div class="logo"></div>
+<% end %>
+
+  <nav>
+    <ul>
+      <li><%= link_to 'Login', new_user_session_path %></li>
+      <li><%= link_to 'About', about_path %></li>
+      <li><%= link_to 'Shop', shop_path %></li>
+      <li><%= link_to 'Contact', contact_path %></li> <!-- Assuming you have a contact page -->
+      <!-- Add other links as needed -->
+    </ul>
+  </nav>
+  <button class="btn-subscribe">SUBSCRIBE</button>
+  <div class="search">
+    <input type="search" placeholder="Search...">
+    <button><i class="fa fa-search"></i></button>
+  </div>
+  <!-- ... rest of your navbar content ... -->
+</header>
