@@ -8,4 +8,8 @@ class PagesController < ApplicationController
     # Any logic for your shop page
   end
 
+  def contact
+    # Your contact action logic goes here
+  end
+
 end

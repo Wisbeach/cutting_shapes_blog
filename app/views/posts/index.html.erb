@@ -4,32 +4,38 @@
   <h1>Cutting Shapes with a Banjo Smuggler</h1>
   <%# <input type="text" placeholder="Search..."> %>
   <div class="locations">
-    <button>SECTION 1</button>
-    <button>SECTION 2</button>
-    <button>SECTION 3</button>
+    <button>Triangle</button>
+    <button>Circle</button>
+    <button>Square</button>
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <!-- First Article content here -->
-    </div>
+<div class="container mt-4">
+<div class="posts-header">
+  <h1>Posts</h1>
 
-    <div class="col-md-6">
-      <!-- Second Article content here -->
-    </div>
-  </div>
+</div>
   <div class="row">
-    <div class="col-md-6">
-      <!-- Third Article content here -->
-    </div>
-
-    <div class="col-md-6">
-      <!-- Fourth Article content here -->
-    </div>
+    <% @posts.each do |post| %>
+      <div class="col-md-4 mb-3">
+        <div class="postcard">
+          <%# If you have an image associated with the post %>
+          <% if post.image.attached? %>
+            <%= image_tag post.image, class: "card-img-top" %>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= post.title %></h5>
+            <p class="card-text">
+              <%= truncate(post.body.to_plain_text, length: 100) %>
+            </p>
+            <%= link_to 'Read More', post_path(post), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
+
 
 <footer>
   <!-- Add footer content here, if any -->

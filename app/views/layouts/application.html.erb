@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- It seems you have commented out the logo link, uncomment if needed -->
-  <%# <%= link_to image_tag('banjo2.png', alt: 'Company Logo', class: 'logo'), root_path %> 
+  <!-- Un-comment if you want to include the logo -->
+  <%# link_to image_tag('banjo2.png', alt: 'Company Logo', class: 'logo'), root_path %>
+
   <title>CuttingShapesBlog</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Caveat:wght@700&display=swap" rel="stylesheet">
+  <%# <%= stylesheet_link_tag 'application.scss', media: 'all' %>
+  <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload' %>
+  <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
 
   <%= javascript_importmap_tags %>
 </head>
 <body>
 
-  <%= render 'layouts/navbar' %> <!-- Include the navbar partial -->
+  <%= render 'layouts/navbar' %><!-- Include the navbar partial -->
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <%# <p class="notice"><%= notice</p> %>
+  <%# <p class="alert"><%= alert</p> %>
 
-  <%= yield %>
+  <%= yield %><!-- This is where the content of your views will be inserted -->
+
 </body>
 </html>
