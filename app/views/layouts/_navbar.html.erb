@@ -14,7 +14,9 @@
       <!-- Add other links as needed -->
     </ul>
   </nav>
-  <%= link_to 'New Post', new_post_path %>
+  <% if current_user.is_admin? %>
+  <%= link_to 'New Post', new_post_path, class: 'new-post-link' %>
+  <% end %>
   <button class="btn-subscribe">SUBSCRIBE</button>
   <div class="search">
     <input type="search" placeholder="Search...">

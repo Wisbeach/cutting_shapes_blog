@@ -1,18 +1,21 @@
 <!-- app/views/posts/show.html.erb -->
+<div>
+  <div class="post-container">
+    <h1><%= @post.title %></h1>
+    <% if @post.image.attached? %>
+      <%= image_tag @post.image %>
+    <% end %>
+    <div class="post-content">
+      <%= simple_format(@post.body.to_s) %>
+    </div>
 
-<div class="post-container">
- <h1><%= @post.title %></h1>
- <% if @post.image.attached? %>
-    <%= image_tag @post.image %>
-  <% end %>
-  <div class="post-content">
-    <%= simple_format(@post.body.to_s) %>
+
+    <!-- Other post details here -->
+
+    <%= link_to 'Back', posts_path %>
+
+       <% if user_signed_in? && (current_user == @post.user || current_user.admin?) %>
+      <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    <% end %>
   </div>
-
-  <!-- Other post details here -->
-
-  <%= link_to 'Back', posts_path %>
-
-
-
-</div>
+</div>>
