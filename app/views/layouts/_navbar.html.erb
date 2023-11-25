@@ -1,26 +1,30 @@
 
 <header>
-<%= link_to root_path, class: "logo-link" do %>
-  <div class="logo"></div>
-<% end %>
+  <%= link_to root_path, class: "logo-link" do %>
+    <div class="logo"></div>
+  <% end %>
 
   <nav>
     <ul>
-      <li><%= link_to 'Login', new_user_session_path %></li>
+      <% unless user_signed_in? %>
+        <li><%= link_to 'Login', new_user_session_path %></li>
+      <% end %>
+
+      <% if user_signed_in? && current_user.is_admin? %>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to 'New Post', new_post_path, class: 'new-post-link' %></li>
+      <% end %>
 
       <li><%= link_to 'About', about_path %></li>
       <li><%= link_to 'Shop', shop_path %></li>
-      <li><%= link_to 'Contact', contact_path %></li> <!-- Assuming you have a contact page -->
-      <!-- Add other links as needed -->
+      <li><%= link_to 'Contact', contact_path %></li>
     </ul>
   </nav>
-  <% if current_user.is_admin? %>
-  <%= link_to 'New Post', new_post_path, class: 'new-post-link' %>
-  <% end %>
+
   <button class="btn-subscribe">SUBSCRIBE</button>
   <div class="search">
     <input type="search" placeholder="Search...">
     <button><i class="fa fa-search"></i></button>
   </div>
-  <!-- ... rest of your navbar content ... -->
 </header>
+
