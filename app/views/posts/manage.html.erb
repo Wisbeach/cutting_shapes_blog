@@ -1,0 +1,14 @@
+<div class="manage-posts-container">
+  <h1>Manage Posts</h1>
+
+  <%= form_with(url: bulk_delete_posts_path, method: :post) do %>
+    <% @posts.each do |post| %>
+      <div class="post-entry">
+        <%= check_box_tag "post_ids[]", post.id %>
+        <label for="post_ids_<%= post.id %>"><%= post.title %></label>
+      </div>
+    <% end %>
+
+    <%= submit_tag 'Delete Selected Posts', class: 'delete-posts-btn', data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</div>

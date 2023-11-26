@@ -15,6 +15,7 @@
         <li><%= link_to 'New Post', new_post_path, class: 'new-post-link' %></li>
       <% end %>
 
+
       <li><%= link_to 'About', about_path %></li>
       <li><%= link_to 'Shop', shop_path %></li>
       <li><%= link_to 'Contact', contact_path %></li>
@@ -22,9 +23,12 @@
   </nav>
 
   <button class="btn-subscribe">SUBSCRIBE</button>
+  <% if current_user.is_admin? %>
+       <%= link_to 'Manage Posts', manage_posts_path, class: 'new-post-link' %>
+     <% end %>
+
   <div class="search">
     <input type="search" placeholder="Search...">
     <button><i class="fa fa-search"></i></button>
   </div>
 </header>
-

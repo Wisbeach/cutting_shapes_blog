@@ -12,7 +12,9 @@
 
     <!-- Other post details here -->
 
-    <%= link_to 'Back', posts_path %>
+     <%= link_to posts_path, class: 'back-link-class' do %>
+    <%= image_tag 'backicon-removebg-preview.png', alt: 'Back', class: 'back-image-class' %>
+   <% end %>
 
        <% if user_signed_in? && (current_user == @post.user || current_user.admin?) %>
       <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
