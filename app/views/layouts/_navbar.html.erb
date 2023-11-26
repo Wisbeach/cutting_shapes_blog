@@ -22,10 +22,22 @@
     </ul>
   </nav>
 
-  <button class="btn-subscribe">SUBSCRIBE</button>
-  <% if current_user.is_admin? %>
-       <%= link_to 'Manage Posts', manage_posts_path, class: 'new-post-link' %>
-     <% end %>
+ <!-- Subscribe Button -->
+<button id="subscribeBtn" class="btn-subscribe">SUBSCRIBE</button>
+
+<!-- Subscription Modal (initially hidden) -->
+<div id="subscriptionModal" class="modal">
+  <div class="modal-content">
+   <span class="close">&times;</span>
+    <h4>Subscribe to Our Newsletter</h4>
+    <p>Enter your email to stay updated:</p>
+    <input type="email" id="subscriptionEmail" placeholder="Email address">
+    <button id="confirmSubscription" class="btn-confirm">Confirm Subscription</button>
+  </div>
+</div>
+  <% if user_signed_in? && current_user.is_admin? %>
+  <%= link_to 'Manage Posts', manage_posts_path, class: 'new-post-link' %>
+<% end %>
 
   <div class="search">
     <input type="search" placeholder="Search...">

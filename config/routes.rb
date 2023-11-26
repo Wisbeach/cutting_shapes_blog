@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   root 'posts#index'
   get 'posts/manage', to: 'posts#manage', as: 'manage_posts'
   post 'posts/bulk_delete', to: 'posts#bulk_delete', as: 'bulk_delete_posts'
+  post '/subscribe', to: 'subscriptions#create'
 
   # Resource routes for posts
   resources :posts
